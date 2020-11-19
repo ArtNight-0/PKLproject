@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg01"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="@color/darkgreenburn"
+            android:elevation="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="SPC Hadist"
+            android:textSize="50dp"/>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_centerVertical="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:background="@color/greenleaf"
+        android:columnCount="2"
+        android:rowCount="3">
+
+        <FrameLayout
+            android:layout_columnWeight="1"
+            android:layout_width="100dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_base_grdgreen"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="100dp"
+                android:layout_height="150dp">
+
+                <ImageButton
+                    android:scaleType="fitEnd"
+                    android:padding="10dp"
+                    android:id="@+id/Author_btn"
+                    android:layout_width="100dp"
+                    android:background="@color/transparentColor"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/author" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Author_btn"
+                    android:layout_centerHorizontal="true"
+                    android:text="Author"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_base_grdgreen"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="100dp"
+                android:layout_height="150dp">
+
+                <ImageButton
+                    android:background="@color/transparentColor"
+                    android:scaleType="fitEnd"
+                    android:padding="10dp"
+                    android:id="@+id/Book_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/book" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Book_btn"
+                    android:layout_centerHorizontal="true"
+                    android:text="Books"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_base_grdgreen"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="100dp"
+                android:layout_height="150dp">
+
+                <ImageButton
+                    android:background="@color/transparentColor"
+                    android:id="@+id/Chapter_btn"
+                    android:scaleType="fitEnd"
+                    android:padding="10dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/chapter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Chapter_btn"
+                    android:layout_centerHorizontal="true"
+                    android:text="Chapters"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_base_darkgreen"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="100dp"
+                android:layout_height="150dp">
+
+                <ImageButton
+                    android:background="@color/transparentColor"
+                    android:id="@+id/About_btn"
+                    android:scaleType="fitEnd"
+                    android:padding="10dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/about" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/About_btn"
+                    android:layout_centerHorizontal="true"
+                    android:text="About"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </GridLayout>
+
+
+</RelativeLayout>
