@@ -15,9 +15,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorViewHolder> implements Filterable {
+public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorViewHolder> {
 
-    private List<Item_Author> mExampleList;
+    public static List<Item_Author> mExampleList;
     private List<Item_Author> mExampleListALL;
 
 //    private static final String TAG = "RecyclerAdapter";
@@ -124,45 +124,52 @@ public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorVi
         }
     }
 
+    Adapter_Author(ArrayList<Item_Author> arrayList) {
+        this.mExampleList = arrayList;
+    }
 
 
     //
-    @Override
-    public Filter getFilter() {
+//    @Override
+//    public Filter getFilter() {
+//
+//        return filter;
+//    }
 
-        return filter;
+//    private Filter filter = new Filter() {
+//        @Override
+//        protected FilterResults performFiltering(CharSequence constraint) {
+//            List<Item_Author> filteredlist = new ArrayList<>();
+//
+//            if (constraint == null || constraint.length() == 0) {
+//                filteredlist.addAll(mExampleListALL);
+//            } else {
+//                String filterpattern = constraint.toString().toLowerCase().trim();
+//
+//                for (Item_Author item : mExampleListALL) {
+//                    if (item.getName().toLowerCase().contains(filterpattern)) {
+//                        filteredlist.add(item);
+//                    }
+//                }
+//            }
+//            FilterResults results = new FilterResults();
+//            results.values = filteredlist;
+//            return results;
+//
+//        }
+//
+//        @Override
+//        protected void publishResults(CharSequence constraint, FilterResults results) {
+//            mExampleList.clear();
+//            mExampleList.addAll((Collection<? extends Item_Author>) results.values);
+//            notifyDataSetChanged();
+//
+//        }
+//    };
+
+    void setFilter(ArrayList<Item_Author> filterList) {
+        mExampleList = new ArrayList<>();
+        mExampleList.addAll(filterList);
+        notifyDataSetChanged();
     }
-
-    private Filter filter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Item_Author> filteredlist = new ArrayList<>();
-
-            if (constraint == null || constraint.length() == 0) {
-                filteredlist.addAll(mExampleListALL);
-            } else {
-                String filterpattern = constraint.toString().toLowerCase().trim();
-
-                for (Item_Author item : mExampleListALL) {
-                    if (item.getName().toLowerCase().contains(filterpattern)) {
-                        filteredlist.add(item);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filteredlist;
-            return results;
-
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            mExampleList.clear();
-            mExampleList.addAll((Collection<? extends Item_Author>) results.values);
-            notifyDataSetChanged();
-
-        }
-    };
-
-
 }

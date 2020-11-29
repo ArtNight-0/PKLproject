@@ -173,9 +173,15 @@ private void setRecyclerView(){
 
             @Override
             public boolean onQueryTextChange(String query ) {
-//                if (mAdapter != null) {
-                    mAdapter.getFilter().filter(query);
-//                }
+                query = query.toLowerCase();
+                ArrayList<Item_Author> itemAuthors = new ArrayList<>();
+                for (Item_Author data : Adapter_Author.mExampleList) {
+                    String judul = data.getName().toLowerCase();
+                    if (judul.contains(query)) {
+                        itemAuthors.add(data);
+                    }
+                }
+                mAdapter.setFilter(itemAuthors);
                 return false;
                 }
         });
