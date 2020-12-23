@@ -175,7 +175,7 @@ private void setRecyclerView(){
             public boolean onQueryTextChange(String query ) {
                 query = query.toLowerCase();
                 ArrayList<Item_Author> itemAuthors = new ArrayList<>();
-                for (Item_Author data : Adapter_Author.mExampleList) {
+                for (Item_Author data : Adapter_Author.mExampleListALL) {
                     String judul = data.getName().toLowerCase();
                     if (judul.contains(query)) {
                         itemAuthors.add(data);

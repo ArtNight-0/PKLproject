@@ -17,8 +17,8 @@ import java.util.List;
 
 public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorViewHolder> {
 
-    public static List<Item_Author> mExampleList;
-    private List<Item_Author> mExampleListALL;
+    private List<Item_Author> mExampleList;
+    public static List<Item_Author> mExampleListALL;
 
 //    private static final String TAG = "RecyclerAdapter";
 //    List<Item_Author> authorList;
@@ -84,7 +84,7 @@ public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorVi
     Adapter_Author(List<Item_Author> mExampleList)
     {
         this.mExampleList = mExampleList;
-        mExampleListALL = new ArrayList<>(mExampleList);
+//        mExampleListALL = new ArrayList<>(mExampleList);
     }
 
     @NonNull
@@ -115,12 +115,14 @@ public class Adapter_Author extends RecyclerView.Adapter<Adapter_Author.AuthorVi
 
     public Adapter_Author(HaditsAuthor data) {
         mExampleList = new ArrayList<>();
+        mExampleListALL = new ArrayList<>();
         List<POJOAuthor> list = data.getData();
         int len = list.size();
         for (int i=0;i<len;i++) {
             POJOAuthor item = list.get(i);
             Item_Author itemAuthor = new Item_Author(item);
             mExampleList.add(itemAuthor);
+            mExampleListALL.add(itemAuthor);
         }
     }
 
